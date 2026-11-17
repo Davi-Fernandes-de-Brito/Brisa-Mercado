@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-cadastro">
+        <div class="titulo-cadastro">
+            <h1>Cadastro</h1>
+            <p>Preencha seus dados para continuar.</p>
+        </div>
+        <form class="formCadastro">
+            <div class="campo-nome">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+            </div>
+            <div class="formSobrenome">
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome" required>
+            </div>
+            <div class="formEmail">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+            </div>
+            <div class="formSenha">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Mínimo de 8 caracteres" minlength="8" autocomplete="new-password" required>
+            </div>
+            <div class="formTelefone">
+                <label for="telefone">Número de telefone:</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+            </div>
+            <div class="formNascimento">
+                <label for="data-nascimento">Data de nascimento:</label>
+                <input type="date" id="data-nascimento" name="data-nascimento" required>
+            </div>
+            <div class="formCep">
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" placeholder="00000000" maxlength="8" required>
+            </div>
+            <div class="formCidade">
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required>
+            </div>
+            <div class="formRua">
+                <label for="rua">Rua:</label>
+                <input type="text" id="rua" name="rua" placeholder="Digite sua rua" required>
+            </div>
+            <div class="formBairro">
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" placeholder="Digite seu bairro" required>
+            </div>
+            <div class="campo-botao">
+                <button type="submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="main.js" type="module"></script>
+</html>

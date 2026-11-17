@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Instrument+Sans:wght@400;500;600&display=swap");
+:root {
+    --cobalto: #2433ff;
+    --marinho: #0b0f3b;
+    --manteiga: #ffd84a;
+    --papel: #fbfaf6;
+    --campo: #efeefb;
+    --titulo: "Unbounded", "Arial Black", sans-serif;
+    --corpo: "Instrument Sans", "Segoe UI", Arial, sans-serif;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    background-color: var(--manteiga);
+    color: var(--marinho);
+    font-family: var(--corpo);
+    font-size: 1rem;
+    line-height: 1.45;
+}
+/* Cartão principal */
+.container-produtos {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    background-color: var(--papel);
+    border-radius: 32px;
+    overflow: hidden;
+}
+/* Cabeçalho azul com a órbita amarela */
+.titulo-produtos {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 2.75rem 2.5rem;
+    background-color: var(--cobalto);
+    color: var(--papel);
+}
+.titulo-produtos h1 {
+    font-family: var(--titulo);
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+}
+.titulo-produtos p {
+    margin-top: 0.75rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+/* Círculo amarelo cortado pela borda do cabeçalho */
+.titulo-produtos::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 17rem;
+    height: 17rem;
+    right: -4rem;
+    bottom: -9.5rem;
+    border-radius: 50%;
+    background-color: var(--manteiga);
+}
+/* Anel concêntrico ao redor do círculo */
+.titulo-produtos::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 25rem;
+    height: 25rem;
+    right: -8rem;
+    bottom: -13.5rem;
+    border-radius: 50%;
+    border: 2px solid rgba(251, 250, 246, 0.35);
+}
+/* Botão de sair no canto do cabeçalho */
+.link-sair {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.75rem;
+    padding: 0.5rem 1.25rem;
+    border: 2px solid var(--papel);
+    border-radius: 999px;
+    color: var(--papel);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+.link-sair:hover {
+    background-color: var(--manteiga);
+    border-color: var(--manteiga);
+    color: var(--marinho);
+}
+.link-sair:focus-visible {
+    outline: 3px solid var(--manteiga);
+    outline-offset: 3px;
+}
+/* Lista: os cards se organizam sozinhos em colunas */
+.lista-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.5rem;
+    padding: 2.5rem;
+}
+/* Mensagem enquanto a lista estiver vazia */
+.lista-produtos:empty::before {
+    content: "Nenhum produto por aqui ainda.";
+    grid-column: 1 / -1;
+    padding: 3rem 1rem;
+    border: 2px dashed rgba(36, 51, 255, 0.35);
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 500;
+    color: #5c5b8a;
+}
+/* Card de produto: é só usar esta classe em cada produto */
+.card-produto {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--campo);
+    border: 2px solid transparent;
+    border-radius: 22px;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.card-produto:hover {
+    transform: translateY(-4px);
+    border-color: var(--cobalto);
+}
+.produto-imagem {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background-color: #dcdaf5;
+}
+.produto-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.1rem 1.25rem 1.25rem;
+}
+.produto-nome {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+.produto-descricao {
+    font-size: 0.9rem;
+    color: #4a4977;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.produto-preco {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    font-family: var(--titulo);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--cobalto);
+}
+.produto-botao {
+    height: 2.9rem;
+    margin-top: 0.5rem;
+    background-color: var(--cobalto);
+    color: var(--papel);
+    border: 0;
+    border-radius: 999px;
+    font-family: var(--titulo);
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease,
+        transform 0.1s ease;
+}
+.produto-botao:hover {
+    background-color: var(--manteiga);
+    color: var(--marinho);
+}
+.produto-botao:active {
+    transform: scale(0.98);
+}
+.produto-botao:focus-visible {
+    outline: 3px solid var(--marinho);
+    outline-offset: 3px;
+}
+/* Celular */
+@media (max-width: 640px) {
+    .container-produtos {
+        border-radius: 26px;
+    }
+    .titulo-produtos {
+        padding: 4.25rem 1.5rem 2.25rem;
+    }
+    .lista-produtos {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+        padding: 1.5rem 1.25rem;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
+/* Rodapé */
+.rodape-produtos {
+    padding: 2.5rem;
+    background-color: var(--marinho);
+    color: var(--papel);
+}
+.rodape-topo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+.rodape-nome {
+    display: block;
+    font-family: var(--titulo);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+.rodape-marca p {
+    margin-top: 0.35rem;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+.rodape-contatos {
+    display: flex;
+    gap: 0.75rem;
+}
+.rodape-contatos a {
+    width: 3rem;
+    height: 3rem;
+    display: grid;
+    place-items: center;
+    border: 2px solid rgba(251, 250, 246, 0.4);
+    border-radius: 50%;
+    color: var(--papel);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background-color 0.15s ease, border-color 0.15s ease,
+        color 0.15s ease, transform 0.15s ease;
+}
+.rodape-contatos a:hover {
+    background-color: var(--manteiga);
+    border-color: var(--manteiga);
+    color: var(--marinho);
+    transform: translateY(-3px);
+}
+.rodape-contatos a:focus-visible {
+    outline: 3px solid var(--manteiga);
+    outline-offset: 3px;
+}
+.rodape-copyright {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(251, 250, 246, 0.2);
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+@media (max-width: 640px) {
+    .rodape-produtos {
+        padding: 2rem 1.5rem;
+    }
+    .rodape-topo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
