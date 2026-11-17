@@ -3,7 +3,7 @@
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![Status](https://img.shields.io/badge/status-em%20desenvolvimento-2433ff?style=flat)
+![Status](https://img.shields.io/badge/status-em%20concluido-2433ff?style=flat)
 
 Aplicação web front-end de uma empresa fictícia, com fluxo de cadastro, login e vitrine de produtos. O projeto consome duas APIs públicas, a **Fake Store API** e a **ViaCEP**, e é escrito em **JavaScript puro com ES Modules**, sem frameworks.
 
